@@ -1,0 +1,16 @@
+FOTOS DAS CATEGORIAS (cards da home)
+====================================
+Uma foto real por categoria (ideal: quadrada, 400x400):
+  acessorios.webp
+  racoes.webp
+  medicacoes.webp
+Formatos aceitos: .webp, .jpg, .jpeg, .png, .avif
+Sem arquivo, o card mostra só o nome e a seta (sem desenho).
+
+FUNDO DAS FILEIRAS DO CARROSSEL ("Nossos produtos" na home)
+-----------------------------------------------------------
+Foto horizontal grande (ideal: 1600 px de largura ou mais), com o nome da categoria + "-fundo":
+  acessorios-fundo.webp
+  racoes-fundo.webp
+  medicacoes-fundo.webp
+Sem esse arquivo, a fileira usa a foto quadrada da categoria como fundo.

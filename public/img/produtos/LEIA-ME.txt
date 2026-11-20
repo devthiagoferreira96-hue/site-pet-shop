@@ -1,0 +1,19 @@
+FOTOS DOS PRODUTOS
+==================
+Coloque aqui a foto real de cada produto, com o nome do arquivo igual ao 'slug' do produto.
+Formatos aceitos: .webp, .jpg, .jpeg, .png, .avif (ideal: quadrada, 800x800).
+Se o produto tiver foto enviada pelo painel admin, ela tem prioridade sobre esta pasta.
+
+Produtos atuais:
+  antibiotico-veterinario-250mg.webp   <- Antibiótico Veterinário 250mg
+  antipulgas-pipeta-gatos.webp   <- Antipulgas Pipeta Gatos
+  arranhador-torre-para-gatos.webp   <- Arranhador Torre para Gatos
+  cama-pet-nuvem-m.webp   <- Cama Pet Nuvem M
+  coleira-ajustavel-turquesa.webp   <- Coleira Ajustável Turquesa
+  racao-filhotes-3kg.webp   <- Ração Filhotes 3kg
+  racao-gatos-castrados-10kg.webp   <- Ração Gatos Castrados 10kg
+  racao-premium-caes-adultos-15kg.webp   <- Ração Premium Cães Adultos 15kg
+  vermifugo-comprimido-caes.webp   <- Vermífugo Comprimido Cães
+
+Em desenvolvimento (npm run dev) a foto aparece ao recarregar a página.
+Em produção, reinicie/rebuild o site depois de adicionar arquivos em public/.

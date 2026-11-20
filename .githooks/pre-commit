@@ -1,0 +1,6 @@
+#!/bin/sh
+# Bloqueia o commit se houver senha/chave/token nos arquivos que estão sendo commitados.
+node scripts/verificar-segredos.mjs --staged || {
+  echo "Commit bloqueado: remova o segredo (use o .env) e tente de novo."
+  exit 1
+}

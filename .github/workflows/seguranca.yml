@@ -1,0 +1,36 @@
+# Roda a cada push/PR e toda segunda-feira: segredos, dependências vulneráveis, tipos, testes e análise de código.
+name: Segurança
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 9 * * 1"
+permissions:
+  contents: read
+  security-events: write
+jobs:
+  verificacoes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with: { fetch-depth: 0 }   # histórico completo: procura segredos em commits antigos também
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci --ignore-scripts
+      - name: Segredos no código atual
+        run: node scripts/verificar-segredos.mjs
+      - name: Segredos no histórico do Git (gitleaks)
+        run: docker run --rm -v "$PWD:/repo" zricethezav/gitleaks:latest detect --source /repo --redact --no-banner
+      - name: Dependências com vulnerabilidade (alta/crítica)
+        run: npm audit --omit=dev --audit-level=high
+      - name: Tipos
+        run: npx tsc --noEmit
+      - name: Testes de regras e segurança
+        run: npm run test:dominio
+  codeql:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: github/codeql-action/init@v3
+        with: { languages: javascript-typescript }
+      - uses: github/codeql-action/analyze@v3

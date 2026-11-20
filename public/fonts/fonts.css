@@ -1,0 +1,4 @@
+/* Fontes do site, servidas pelo próprio domínio (sem Google Fonts: não envia o IP do visitante a terceiros).
+ * Fraunces (títulos) e Figtree (texto) — SIL Open Font License 1.1 (veja OFL-*.txt). Detalhes em docs/DESIGN-SYSTEM.md. */
+@font-face { font-family: "Fraunces"; src: url("/fonts/Fraunces.woff2") format("woff2"); font-weight: 100 900; font-style: normal; font-display: swap; }
+@font-face { font-family: "Figtree"; src: url("/fonts/Figtree.woff2") format("woff2"); font-weight: 300 900; font-style: normal; font-display: swap; }

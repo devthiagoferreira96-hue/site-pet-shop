@@ -1,0 +1,58 @@
+{
+  "name": "pet-shop",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=20.9"
+  },
+  "scripts": {
+    "icones": "node scripts/instalar-icones.mjs",
+    "predev": "tsx --env-file=.env --import ./scripts/usar-db-admin.mjs scripts/seed-teste-carrossel.ts --auto",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "tsc --noEmit",
+    "db:generate": "drizzle-kit generate",
+    "db:migrate": "drizzle-kit migrate",
+    "db:seed": "tsx --env-file=.env --import ./scripts/usar-db-admin.mjs scripts/seed.ts",
+    "db:seed-demo": "tsx --env-file=.env --import ./scripts/usar-db-admin.mjs scripts/seed.ts --demo",
+    "db:seed-carrossel": "tsx --env-file=.env --import ./scripts/usar-db-admin.mjs scripts/seed-teste-carrossel.ts",
+    "criar-admin": "tsx --env-file=.env --import ./scripts/usar-db-manutencao.mjs scripts/criar-admin.ts",
+    "limpar-dados": "tsx --env-file=.env --import ./scripts/usar-db-manutencao.mjs scripts/limpar-dados.ts",
+    "test": "npm run test:dominio && npm run test:api",
+    "test:dominio": "tsx --test tests/dominio.test.ts",
+    "test:api": "tsx --env-file=.env --import ./scripts/usar-db-admin.mjs --test tests/api.test.ts",
+    "db:verificar": "tsx --env-file=.env scripts/verificar-banco.ts",
+    "icones:ajustar": "node scripts/instalar-icones.mjs --so-ajustar",
+    "db:seguranca": "tsx --env-file=.env scripts/aplicar-seguranca-banco.ts",
+    "db:criptografar": "tsx --env-file=.env scripts/criptografar-existentes.ts",
+    "gerar-segredos": "node scripts/gerar-segredos.mjs",
+    "prepare": "node scripts/instalar-hooks.mjs",
+    "seguranca:segredos": "node scripts/verificar-segredos.mjs",
+    "seguranca:deps": "npm audit --omit=dev --audit-level=high",
+    "seguranca": "npm run seguranca:segredos && npm run seguranca:deps && npm run lint && npm run test:dominio"
+  },
+  "dependencies": {
+    "clsx": "^2.1.1",
+    "drizzle-orm": "^0.44.0",
+    "exceljs": "^4.4.0",
+    "lottie-web": "^5.12.2",
+    "motion": "^12.43.0",
+    "next": "^15.5.0",
+    "postgres": "^3.4.5",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "sharp": "^0.34.0",
+    "tailwind-merge": "^3.7.0",
+    "zod": "^3.25.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.0",
+    "drizzle-kit": "^0.31.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.8.0"
+  }
+}

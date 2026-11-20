@@ -1,0 +1,15 @@
+node_modules/
+.next/
+uploads/
+*.tsbuildinfo
+next-env.d.ts
+
+# Segredos: NUNCA vão para o Git (só o .env.example, sem valores reais)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.sql.gz
+backup*/

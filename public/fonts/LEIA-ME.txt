@@ -1,0 +1,14 @@
+FONTES DO SITE
+
+  Fraunces.woff2  -> títulos (serifada "macia", eixos SOFT/opsz/wght)
+  Figtree.woff2   -> texto, botões, formulários
+
+As duas têm licença SIL Open Font License 1.1 (uso comercial permitido); as licenças estão
+em OFL-Fraunces.txt e OFL-Figtree.txt. Ficam no próprio site, sem Google Fonts, para não
+enviar o IP de cada visitante ao Google sem consentimento (LGPD).
+
+Origem: pacotes npm @fontsource-variable/fraunces (arquivo latin-full) e
+@fontsource-variable/figtree (arquivo latin-wght).
+
+O layout só carrega fonts.css se os dois arquivos existirem. Sem eles, o site usa fontes
+do sistema (funciona, mas fica diferente do design system). Veja docs/DESIGN-SYSTEM.md.
